@@ -18,6 +18,7 @@ class TickerWebsocketClient(gdax.WebsocketClient):
     def on_message(self, msg):
         if 'price' in msg:
             self.price = float(msg['price'])
+            
         time.sleep(1)
             
     def on_close(self):
@@ -33,7 +34,7 @@ class Ticker():
         self.current_product_index = 0
         self.update_current_product()
         
-        self.price = 0.0
+        self.price = None
         self.previous_price = None
 
     def update_price(self):
@@ -77,7 +78,7 @@ def loop():
         color = 'red' if ticker.previous_price > ticker.price else 'green'
         screen.text("EUR {:.2f}".format(ticker.price), color=color)
 
-@every(seconds=1)
+@every(seconds=0.5)
 def update_ticker():
     ticker.update_price()
 
