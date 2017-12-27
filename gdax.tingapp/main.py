@@ -47,4 +47,22 @@ def loop():
 def updateTicker():
     ticker.updatePrice(tickerSocket.price)
 
+@midright_button.press
+def increase_brightness():
+    brightness = screen.brightness
+    brightness += 10
+    if brightness > 100:
+        brightness = 100
+        
+    screen.brightness = brightness
+    
+@midleft_button.press
+def decrease_brightness():
+    brightness = screen.brightness
+    brightness -= 10
+    if brightness < 10:
+        brightness = 10
+        
+    screen.brightness = brightness
+    
 tingbot.run(loop)
