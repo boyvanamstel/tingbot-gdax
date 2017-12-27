@@ -1,1 +1,1 @@
-gdax>=1.0.6
+git+https://github.com/danpaquin/gdax-python.git@master#egg=gdax
