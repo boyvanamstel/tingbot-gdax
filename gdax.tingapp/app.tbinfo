@@ -1,0 +1,7 @@
+{
+    "name": "GDAX Ticker",
+    "author": "Boy van Amstel",
+    "website":"boy.sh",
+    "caption":"GDAX crypto ticker for your Tingbot.",
+    "version":"0.1"
+}
